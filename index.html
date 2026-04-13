@@ -5,23 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skaityk</title>
 <style>
-  body { font-family: -apple-system, system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
-  h1 { margin-bottom: 4px; }
-  .subtitle { color: #666; margin-bottom: 32px; }
-  h2 { margin-top: 32px; }
-  a { color: #007aff; }
+  :root {
+    --bg: #fafaf9;
+    --card: #ffffff;
+    --text: #1c1917;
+    --muted: #78716c;
+    --accent: #16a34a;
+    --accent-hover: #15803d;
+    --border: #e7e5e4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --card: #292524;
+      --text: #fafaf9;
+      --muted: #a8a29e;
+      --accent: #4ade80;
+      --accent-hover: #86efac;
+      --border: #44403c;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+  .container { max-width: 540px; width: 100%; }
+  .hero {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent), #059669);
+    border-radius: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 16px;
+    color: white;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 17px;
+  }
+  .description {
+    font-size: 17px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .card h2 {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .card p { font-size: 15px; }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  a:hover { color: var(--accent-hover); }
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    color: var(--muted);
+    font-size: 13px;
+  }
 </style>
 </head>
 <body>
-<h1>Skaityk</h1>
-<p class="subtitle">Lithuanian reader &amp; translator</p>
+<div class="container">
+  <div class="hero">
+    <div class="icon">S</div>
+    <h1>Skaityk</h1>
+    <p class="subtitle">Lithuanian reader & translator</p>
+  </div>
 
-<p>Read Lithuanian texts with built-in word-by-word translation to English. Tap any word to see its meaning. A reading tool for anyone learning Lithuanian or exploring Lithuanian literature and news.</p>
+  <p class="description">Read Lithuanian texts with built-in word-by-word translation to English. Tap any word to see its meaning. A reading tool for anyone learning Lithuanian or exploring Lithuanian literature and news.</p>
 
-<h2>Support</h2>
-<p>For questions, feedback, or bug reports, <a href="https://github.com/vlasdasz/skaityk-site/issues">open an issue on GitHub</a>.</p>
+  <div class="card">
+    <h2>Support</h2>
+    <p>For questions, feedback, or bug reports, <a href="https://github.com/vlasdasz/skaityk-site/issues">open an issue on GitHub</a>.</p>
+  </div>
 
-<h2>Privacy Policy</h2>
-<p>Skaityk does not collect, store, or share any personal data. The app fetches publicly available news articles and uses Google Translate for word-by-word translation. No user accounts, analytics, tracking, or advertising are used. All cached data (articles and translations) is stored locally on your device and never transmitted to third parties.</p>
+  <div class="card">
+    <h2>Privacy Policy</h2>
+    <p>Skaityk does not collect, store, or share any personal data. The app fetches publicly available news articles and uses Google Translate for word-by-word translation. No user accounts, analytics, tracking, or advertising are used. All cached data is stored locally on your device and never transmitted to third parties.</p>
+  </div>
+
+  <div class="footer">
+    <p>Skaityk &copy; 2026</p>
+  </div>
+</div>
 </body>
 </html>
